@@ -1,0 +1,17 @@
+<form [formGroup]="formulaire" (submit)="save()">
+    <label for="title">Title:</label>
+    <input type="text" formControlName="title" id="title">
+    <label for="key">Key:</label>
+    <input type="text" formControlName="key" id="key">
+    <label for="name">Name:</label>
+    <input type="text" formControlName="name" id="name">
+    <label for="active">Active:</label>
+    <input type="text" formControlName="active" id="active">
+    <button type="submit">Save</button>
+
+    <div *ngFor="let character of characterList">
+        {{character.id}}
+        {{character.name}}
+    </div>
+
+</form>
