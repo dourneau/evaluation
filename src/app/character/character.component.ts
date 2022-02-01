@@ -37,4 +37,12 @@ export class CharacterComponent implements OnInit {
     })
   }
 
+  delete(character: Character) {
+    this.characterService.delete(character.id).subscribe({
+      next: () => null,
+      error: err => console.error(err)
+     
+    })
+  }
+
 }

@@ -18,4 +18,9 @@ export class CharacterService {
   getAll(): Observable<Character[]> {
     return this.http.get<Character[]>(`${environment.URL}/characters`);
   }
+
+  delete(id: number): Observable<Character> {
+    return this.http.delete<Character>(`${environment.URL}/characters/${id}`);
+  }
+
 }
