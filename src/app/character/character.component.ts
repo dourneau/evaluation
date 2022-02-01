@@ -20,22 +20,16 @@ export class CharacterComponent implements OnInit {
     key: new FormControl(),
     name: new FormControl(),
     active: new FormControl()
-    
-    
     })
    }
 
   ngOnInit(): void {
-  }
-
-  private getAll() {
     this.characterService.getAll().subscribe({
       next: data => this.characterList = data,
       error: err => console.error(err),
       complete: () => console.log("user service fini")
-    });
+    })
   }
-
 
   save(): void {
     this.characterService.create(this.formulaire.value).subscribe({

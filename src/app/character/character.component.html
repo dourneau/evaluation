@@ -9,9 +9,20 @@
     <input type="text" formControlName="active" id="active">
     <button type="submit">Save</button>
 
-    <div *ngFor="let character of characterList">
-        {{character.id}}
-        {{character.name}}
+    <br>
+    <br>
+    <br>
+
+    <div *ngFor="let character of characterList" >
+        <span *ngIf=character.active>{{character.id}} {{character.title}} {{character.name}} {{character.active}}</span>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div *ngFor="let character of characterList" >
+        <span *ngIf= !character.active>{{character.id}} {{character.title}} {{character.name}} {{character.active}}</span>
     </div>
 
 </form>
